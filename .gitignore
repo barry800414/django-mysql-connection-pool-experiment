@@ -1,0 +1,37 @@
+
+.DS_Store
+
+#to remove compiled files
+*.pc
+*.pyc
+*.pyo
+__pycache__/
+
+#to remove db files
+*.db
+
+# ignoring node_modules
+node_modules/
+
+# misc
+nohup.out
+*.swp
+
+# python virtualenv
+venv
+
+# coverage report
+.coverage
+test-results/
+
+# IDE
+.idea
+.vscode
+
+# PyEnv
+.python-version
+
+data/*
+
+
+

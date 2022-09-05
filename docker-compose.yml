@@ -1,0 +1,23 @@
+
+version: '3.1'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_USER: myapp
+      MYSQL_PASSWORD: myapp
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myapp
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: bind
+        source: ./mysql/mysql.cnf
+        target: /etc/mysql/conf.d/mysql.cnf
+      - type: bind
+        source: ./mysql/init.sql
+        target: /docker-entrypoint-initdb.d/init.sql
+      - type: bind
+        source: ./mysql-db-data
+        target: /var/lib/mysql
